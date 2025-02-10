@@ -1,10 +1,10 @@
+// routes/fileRoutes.js
 const express = require('express');
-const { uploadFile, getFile } = require('../controllers/fileController');
-const upload = require('../utils/storage');
-
 const router = express.Router();
+const upload = require('../middleware/upload');
+const fileController = require('../controllers/fileController');
 
-router.post('/upload', upload.single('file'), uploadFile);
-router.get('/:filename', getFile);
+// Маршрут для загрузки файла (POST /api/files/upload)
+router.post('/upload', upload.single('file'), fileController.uploadFile);
 
 module.exports = router;

@@ -7,8 +7,8 @@ const s3Client = new S3Client({
   endpoint: process.env.MINIO_ENDPOINT || 'http://192.168.1.100:9000',
   forcePathStyle: true, // Важно для работы с MinIO
   credentials: {
-    accessKeyId: process.env.MINIO_ACCESS_KEY || 'mindwrk',
-    secretAccessKey: process.env.MINIO_SECRET_KEY || 'mwk6661!',
+    accessKeyId: process.env.MINIO_ACCESS_KEY || 'admin',
+    secretAccessKey: process.env.MINIO_SECRET_KEY || 'password',
   },
 });
 

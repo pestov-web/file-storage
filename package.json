@@ -1,19 +1,30 @@
 {
-  "name": "file-storage",
+  "name": "pepper-files-microservice",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Микросервис для хранения файлов с MinIO и PostgreSQL",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/server.js",
+    "start": "node src/server.js",
+    "lint": "eslint . --fix",
+    "format": "prettier --write ."
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=8.0.0"
+  },
+  "author": "Pestov Vladimir",
+  "license": "MIT",
   "dependencies": {
-    "cors": "^2.8.5",
+    "@aws-sdk/client-s3": "^3.744.0",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "multer": "1.4.5-lts.1",
-    "uuid": "^11.0.5"
+    "pg": "^8.13.1",
+    "pg-promise": "^11.10.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.20.0",
+    "nodemon": "^3.1.9"
   }
 }
